@@ -1,0 +1,14 @@
+<h1>De object a objeto . La venganza de AJAX</h1>
+<script>
+	const ajax = new XMLHttpRequest()
+	ajax.open("Get","producto.json")
+	ajax.onload = function(){
+		if(this.status == 200 ){ //<---Respuesta exitosa!		
+
+			let productos = JSon parse( this.response )
+			console.log( productos )
+
+
+		}
+	}
+</script>

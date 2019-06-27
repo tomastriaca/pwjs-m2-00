@@ -1,0 +1,13 @@
+class Productor{
+//1)constructor 
+constructor (n,p,s,d){
+	this.nombre = n
+	this.precio = p
+	this stock= p
+	this disponible = d
+}
+
+}
+//2)metodos de instancia
+
+//3)metodos de classes 

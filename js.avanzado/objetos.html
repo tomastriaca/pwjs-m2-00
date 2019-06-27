@@ -1,0 +1,77 @@
+:<h1>Objetos en JavaScript</h1>
+<script src="producto.class.js"></script>
+<script>
+	const crearProducto = function(n,p,s,d){
+		let elProducto = new Object() //<---objeto diferido
+		///propiedades (que es )
+	elProducto.nombre =n
+	elProducto.stock = s
+	elProducto.precio = p
+	elProducto.disponible =d 
+ 	//metodos que hace....
+ 	elProducto.mostrar = function(){
+
+		///document.write(`<p>El producto <strong> ${elProducto.nombre}</strong>vale ARS ${elProducto.precio} c/u</p>`)
+		let ficha = document.createElement("ul")
+
+		let contenido =`
+						<li>Nombre:${elProducto.nombre}</li>
+						<li>Precio:ARS ${elProducto.precio}</li>
+						<li>Stock:${elProducto.stock}unid. </li>
+						<li>Disponible:${elProducto.disponible? "Si" : "No"} </li>
+		
+		ficha.innerHTML = contenido
+
+		documento.body.appendChild( ficha )
+						`
+
+	}
+	elProducto.descuento= function(desc){
+		let descuento = (elProducto.precio * desc) / 100 //<--obtengo el descuento 
+
+		elProducto.precio -= descuento //<-- aplico el descuento 
+
+		elProducto.precio = Math.ceil(elProducto.precio)//redondeo el precio
+	}
+
+
+	return elProducto
+	
+
+	}
+	
+	/////////////////////////////////////////
+
+	//Variables
+	let nombre = "cafe torrado "
+	let stock = 600
+	let precio = 85.65
+	let disponible = false 
+
+	//Array
+	let unProducto = ["Jugo de Naranja", 450, 15.45, true]
+	//objetos
+	let otroProducto = {//<-- objeto literal
+		nombre: "Agua finamente gasificada(baja en sodio)",
+		stock: 100,
+		precio: 175.60,
+		disponible: true
+
+	}
+	let tercerProducto = new Object() //<---objeto diferido
+	tercerProducto.nombre ="alfajor de Maicena"
+	tercerProducto.stock = 150
+	tercerProducto.precio = 65.30
+	tercerProducto.disponible = false 
+
+	let ultimoProducto = crearProducto("Té Rojo", 74.25, 900, true)
+
+
+	//mostrarProductor(otroProducto.nombre, otroProducto.precio)
+	//mostrarProductor(tercerProducto.nombre, tercerProducto.precio)
+	//mostrarProductor(ultimoProducto.nombre, ultimoProducto.precio)
+
+ ultimoProducto.descuento(30)
+  ultimoProducto.mostrar()
+
+</script>
