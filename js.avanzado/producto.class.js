@@ -24,7 +24,11 @@ class Producto {
 		return Math.ceil(this.precio /1.21).toFixed(2)
 
 	}
-	//3) metodo de clase 
+	//3) metodo de clase (o metodos estatiticos )
+
+	static parse() {
+		console.log("ahora deveria convertir Object en producto")
+	}
 }
 
 
