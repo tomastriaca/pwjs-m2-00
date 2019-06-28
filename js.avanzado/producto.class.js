@@ -26,13 +26,26 @@ class Producto {
 	}
 	//3) metodo de clase (o metodos estatiticos )
 
-	static parse() {
+	static parse(data) {
 		console.log("ahora deveria convertir Object en producto")
-	}
+		data = JSON.parse(data)
+
+		if (data instanceof Array ){//<-- Hay muchos Object
+			let productos = new Array()
+
+			data.forEach(item =>{
+				let producto = new Producto(item.nombre, item.stock, item.precio,item.disponible)
+
+				Productos.push(producto)
+
+			})
+
+			return Productos
+
+
+		} else if (data instanceof Object ){//<-- hay un solo Object
+	    } else { //<-- no hay object (no sirve nada....)
+
+	    } 
 }
 
-
-////////////////////////////////////////////
-let objProducto = new Producto ("te de tilo", 55.69, 200, false)
-let objProductoII = new Producto ("submarino", 67.55, 260, true)
-let objProductoIII= new Producto("lemonpie", 115.25,500, true)
