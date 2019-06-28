@@ -40,7 +40,7 @@ class Producto {
 
 			})
 
-			return Productos
+			return productos
 
 
 		} else if (data instanceof Object ){//<-- hay un solo Object
