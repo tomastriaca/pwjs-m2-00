@@ -39,13 +39,13 @@ class Producto {
 
 			data.forEach(item =>{
 				let producto = new Producto(
-					Item..IdPproducto,
-					Item..nombre,
-				 	Item..stock,
-				    Item..precio,
-				    Item..categoria
-				    Item..marca
-				    Item..presentacion
+					Item.IdPproducto,
+					Item.nombre,
+				 	Item.stock,
+				    Item.precio,
+				    Item.categoria
+				    Item.marca
+				    Item.presentacion
 				    )
 
 				Productos.push(producto)
