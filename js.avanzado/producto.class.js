@@ -44,8 +44,13 @@ class Producto {
 
 
 		} else if (data instanceof Object ){//<-- hay un solo Object
-	    } else { //<-- no hay object (no sirve nada....)
+			let producto = new Producto(data.nombre, data.stock, data.precio, data disponible)
 
+			return producto
+
+	    } else { //<-- no hay object (no sirve nada....)
+	    	return null
+	    	
 	    } 
 }
 
