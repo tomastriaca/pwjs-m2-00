@@ -1,10 +1,14 @@
 class Producto {
 	//1)constructor
-	constructor(n,p,s,d){
-		this.nombre = n
-		this.precio =p
-		this.stock = s
-		this .disponible =d
+	constructor(Id, nombre, Precio, marca, presentacion, stock,disponible = false){
+		this.Id = id
+		this.nombre = nombre
+		this.precio =Precio
+		this.marca = marca
+		this.categoria = categoria
+		this.presentacion = presentacion
+		this.stock = stock
+		this.disponible =disponible
 	}
 	// 2)todo de instancia
 	Mostrar(neto){
@@ -34,7 +38,15 @@ class Producto {
 			let productos = new Array()
 
 			data.forEach(item =>{
-				let producto = new Producto(item.nombre, item.stock, item.precio,item.disponible)
+				let producto = new Producto(
+					Item..IdPproducto,
+					Item..nombre,
+				 	Item..stock,
+				    Item..precio,
+				    Item..categoria
+				    Item..marca
+				    Item..presentacion
+				    )
 
 				Productos.push(producto)
 
@@ -44,13 +56,23 @@ class Producto {
 
 
 		} else if (data instanceof Object ){//<-- hay un solo Object
-			let producto = new Producto(data.nombre, data.stock, data.precio, data disponible)
+			let producto = new Producto(
+				Data.IdProducto,
+				Data.nombre,
+				Data.stock,
+				Data.precio,
+				Data.categoria
+				Data.marca
+				Data.presentacion
+				)
+			
+
 
 			return producto
 
 	    } else { //<-- no hay object (no sirve nada....)
 	    	return null
-	    	
+
 	    } 
 }
 
