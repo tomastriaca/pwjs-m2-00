@@ -1,6 +1,6 @@
 class Producto {
 	//1)constructor
-	constructor(Id, nombre, Precio, marca, presentacion, stock,disponible = false){
+	constructor(Id, nombre, Precio, marca,categoria, presentacion, stock,disponible = false){
 		this.Id = id
 		this.nombre = nombre
 		this.precio =Precio
@@ -37,14 +37,14 @@ class Producto {
 		if (data instanceof Array ){//<-- Hay muchos Object
 			let productos = new Array()
 
-			data.forEach(item =>{
+			data.forEach(Item =>{
 				let producto = new Producto(
-					Item.IdPproducto,
+					Item.idProducto,
 					Item.nombre,
 				 	Item.stock,
 				    Item.precio,
-				    Item.categoria
-				    Item.marca
+				    Item.categoria,
+				    Item.marca,
 				    Item.presentacion
 				    )
 
@@ -61,8 +61,8 @@ class Producto {
 				Data.nombre,
 				Data.stock,
 				Data.precio,
-				Data.categoria
-				Data.marca
+				Data.categoria,
+				Data.marca,
 				Data.presentacion
 				)
 			
@@ -74,5 +74,5 @@ class Producto {
 	    	return null
 
 	    } 
-}
-
+    }
+  }
