@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Nerdflix</title>
+		<link rel="shortcut icon" href="img/favicon.ico">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/heroic-features.css">
+		<link rel="stylesheet" href="css/nerdflix.css">
+	</head>
+	<body>
+	    <h1><a class="" href="#"><img src="img/nerdflix.png" class="img-responsive" /></a></h1>
+	
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 text-center">
+					<h3>Ultimos Estrenos</h3>
+				</div>
+			</div>
+			<div class="row text-center" id="peliculas">
+
+				<div class="col-md-3 col-sm-4 pelicula">
+					<div class="thumbnail">
+						<img src="img/sin-foto.jpg" alt="">
+						<div class="caption">
+							<h4>TITULO</h4>
+							<p>ESTRENO</p>
+							<p><a href="#playMovie" class="btn btn-primary">Ver ahora</a></p>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<div class="container" id="playMovie">
+			<div class="row">
+				<div class="col-lg-12">
+					<h1 class="page-header" id="titulo">TITULO (1900)</h1>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-8">
+					<iframe width="750" height="400" src="img/sin-video.jpg" frameborder="0" allowfullscreen></iframe>
+					<h3>Descripcion:</h3>
+					<p id="descripcion">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem nobis praesentium eum voluptate temporibus, obcaecati quod aspernatur eius modi recusandae, sequi quae. Provident illo eligendi sequi repellat harum, rerum, animi!</p>
+				</div>
+				<div class="col-md-4">
+					<img id="imagen" class="img-responsive" src="img/sin-foto.jpg" alt="">
+				</div>
+			</div>
+		</div>
+		<script src="js/pelicula.class.js"></script>
+		<script>
+			let unaPelicula = new Pelicula("Iron Maiden", 2008,"el hombre de hierro", "https://www.google.com/imgres?imgurl=https%3A%2F%2Fimg.europapress.es%2Ffotoweb%2Ffotonoticia_20180309124100_640.jpg&imgrefurl=https%3A%2F%2Fwww.culturaocio.com%2Fcine%2Fnoticia-asi-bleeding-edge-nueva-armadura-iron-man-infinity-war-20180309124100.html&docid=69a_vR16o-vr-M&tbnid=i-KmpMcQbBeHQM%3A&vet=10ahUKEwjb2LaUv5zjAhVJK7kGHSttCAAQMwh0KCEwIQ..i&w=640&h=373&bih=657&biw=1366&q=Iron%20man&ved=0ahUKEwjb2LaUv5zjAhVJK7kGHSttCAAQMwh0KCEwIQ&iact=mrc&uact=8", "https://www.youtube.com/watch?v=8hYlB38asDY")
+
+			let otraPelicula = new Pelicula("Captain America ", 2016,"civil war", "https://images-na.ssl-images-amazon.com/images/I/81hjmDj50sL._RI_.jpg","https://www.youtube.com/watch?v=FkTybqcX-Yo")
+
+			unaPelicula.Mostrar()
+		</script>
+	</body>
+</html>
