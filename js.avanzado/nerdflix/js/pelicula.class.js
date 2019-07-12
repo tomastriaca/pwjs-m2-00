@@ -1,6 +1,7 @@
 class Pelicula {
 //1) constructor 
-constructor(t, e, d, p, tr){
+constructor(i, t, e, d, p, tr){
+		this.id = i
 		this.titulo = t
 		this.descripcion = d
 		this.estreno  = e 
@@ -26,7 +27,39 @@ constructor(t, e, d, p, tr){
 
 			console.log( elemento )
 		}
+		static parse(data){
+		console.log("Ahora deberia convertir Object en Producto")
+		data = JSON.parse(data)
+
+		if( data instanceof Array ){ //<-- Hay muchos Object
+			/* Nueva Forma */
+			return data.map(item => 
+				new Pelicula(
+					item.idPelicula,
+					item.Titulo,
+					item.Estreno,
+					item.Descripcion,
+					item.Poster,
+					item.Trailer
+				)
+			)
+
+		} else if( data instanceof Object ){ //<-- Hay un solo Object
+			
+			return new Pelicula(
+					data.idPelicula,
+					data.Titulo,
+					data.Estreno,
+					data.Descripcion,
+					data.Poster,
+					data.Trailer
+				)
+
+		} else { //<-- No hay ningún Object (No sirve nada...)
+			return null
+		}
+
+	}
 	}
 	
 
-	console.log(Pelicula)

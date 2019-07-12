@@ -35,35 +35,54 @@ class Producto {
 		data = JSON.parse(data)
 
 		if (data instanceof Array ){//<-- Hay muchos Object
-			let productos = new Array()
+			/*vieja forma 
+			let peliculas = new Array()
 
 			data.forEach(Item =>{
-				let producto = new Producto(
+				let pelicula = new pelicula(
 					Item.idProducto,
-					Item.nombre,
-				 	Item.stock,
-				    Item.precio,
-				    Item.categoria,
-				    Item.marca,
-				    Item.presentacion
+					Item.titulo,
+				 	Item.estreno,
+				    Item.descripcion,
+				    Item.poster,
+				    Item.trailer,
+				    
 				    )
 
-				Productos.push(producto)
+				Productos.push( pelicula)
 
 			})
 
-			return productos
+			return peliculas
+			*/
+
+			//nueva forma 
+			return data.map((item =>
+
+				new pelicula(
+					Item.idProducto,
+					Item.titulo,
+				 	Item.estreno,
+				    Item.descripcion,
+				    Item.poster,
+				    Item.trailer,
+
+				  )
+
+
+			)
 
 
 		} else if (data instanceof Object ){//<-- hay un solo Object
-			let producto = new Producto(
+			let producto = new pelicula(
 				Data.IdProducto,
-				Data.nombre,
-				Data.stock,
-				Data.precio,
-				Data.categoria,
-				Data.marca,
-				Data.presentacion
+				Data.titulo,
+				Data.estreno,
+				Data.descripcion,
+				Data.poster,
+				Data.trailer 
+				
+			
 				)
 			
 
