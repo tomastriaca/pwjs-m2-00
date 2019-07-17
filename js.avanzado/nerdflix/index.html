@@ -21,7 +21,7 @@
 			</div>
 			<div class="row text-center" id="peliculas">
 
-				<div class="col-md-3 col-sm-4 pelicula">
+				<div class="col-md-3 col-sm-4 pelicula hide">
 					<div class="thumbnail">
 						<img src="img/sin-foto.jpg" alt="">
 						<div class="caption">
@@ -58,7 +58,7 @@
 
 			let otraPelicula = new Pelicula("Captain America ", 2016,"civil war", "https://images-na.ssl-images-amazon.com/images/I/81hjmDj50sL._RI_.jpg","https://www.youtube.com/watch?v=FkTybqcX-Yo")
 
-			unaPelicula.Mostrar()*/
+			unaPelicula.Mostrar()
 
 			let ajax= new XMLHttpRequest()
 			ajax.open("GET", "https://api.myjson.com/bins/fiuhw")
@@ -80,7 +80,7 @@
 				}
 			}
 			ajax.send()
-
+*/
 			//promesas en js//
 			let compromiso = new Promise(function(ok, error){///<----accion ppal. asincronica
 
@@ -101,25 +101,26 @@
 					}
 					ajax.send()
 					//*****fin de ajax*****//
-				}
+				
 
 
-				} else(){// si Efectivamente hay un LocalStorage...
+				} else {  // si Efectivamente hay un LocalStorage...
 
 					ok(localStorage.getItem("_peliculas"))
 
 				}
+
 			})
 
 			compromiso.then(function(data){///<----- Accion que prometo hacer (si sale bien...)
 
-				let marvel = pelicula.parse(data)
-
-				marvel.forEach( peli => peli.Mostrar)
+				let marvel = Pelicula.parse(data)
+console.log(marvel)
+				marvel.forEach( peli => peli.Mostrar() )
 
 			}) 
 
-			compromiso.catch(???)///<---- Accion que prometo hacer (si sale mal....)
+			//compromiso.catch(???)///<---- Accion que prometo hacer (si sale mal....)
 
 
 

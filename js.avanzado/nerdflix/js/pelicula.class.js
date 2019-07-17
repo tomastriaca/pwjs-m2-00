@@ -1,12 +1,12 @@
 class Pelicula {
 //1) constructor 
-constructor(i, t, e, d, p, tr){
-		this.id = i
-		this.titulo = t
-		this.descripcion = d
-		this.estreno  = e 
-		this.poster = p
-		this.trailer = tr 
+constructor(ID, T, E, D, P, TR){
+		this.ID = ID
+		this.Titulo = T
+		this.Descripcion = D
+		this.Estreno  = E 
+		this.Poster = P
+		this.Trailer = TR 
 		
 		}
 		Mostrar(){
@@ -15,27 +15,50 @@ constructor(i, t, e, d, p, tr){
 			let elemento = document.querySelector(".pelicula").cloneNode(true)
 
 			//2)Reemplazar/llenar con lo datos de "esta"Pelicula 
-				elemento.querySelector("h4").innerText = this.titulo
-				elemento.querySelector("p").innerText = this.estreno
-				elemento.querySelector("img").src= this.poster
+				elemento.querySelector("h4").innerText = this.Titulo
+				elemento.querySelector("p").innerText = this.Estreno
+				elemento.querySelector("img").src= this.Poster
 
-			//3)desocultar el elemento clonado 
+			//3) Generar el comportamiento de "Reproductor" mediante un "closure"
+			elemento.querySelector("a").onclick =(e) => {
+				//desactivar el hipervinculo
+				e.preventDefault()
+
+				//El "this" es la pelicula!
+				console.log(this)
+				
+				let reproductor = document.querySelector("#playMovie")
+
+				reproductor.querySelector("#titulo").innerText= `${this.Titulo} (${this.Estreno})`
+				reproductor.querySelector("#descripcion").innerText = this.Descripcion
+				reproductor.querySelector("#imagen").src= this.Poster
+				reproductor.querySelector("iframe").src = this.Trailer
+
+				window.scroll({
+					behavior: "smooth",
+					top: reproductor.offsetTop
+				})
+			}
+
+			//elemento.querySelector("a") onclick = Reproductor.bind(this)
+
+			//4)desocultar el elemento clonado 
 			elemento.classList.remove("hide")
 
-			//4)anexar el elemento en el contenedor (padre)
+			//5)anexar el elemento en el contenedor (padre)
 			document.querySelector("#peliculas").appendChild(elemento)
 
 			console.log( elemento )
 		}
 		static parse(data){
-		console.log("Ahora deberia convertir Object en Producto")
+		//console.log("Ahora deberia convertir Object en Producto")
 		data = JSON.parse(data)
 
 		if( data instanceof Array ){ //<-- Hay muchos Object
 			/* Nueva Forma */
 			return data.map(item => 
 				new Pelicula(
-					item.idPelicula,
+					item.IDPelicula,
 					item.Titulo,
 					item.Estreno,
 					item.Descripcion,
