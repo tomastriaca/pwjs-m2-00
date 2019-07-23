@@ -8,6 +8,9 @@
 			console.table(peliculas)
 		}
 	}
+	Ajax.onerror(function(){
+		console.error("error: La api n esta disponible")
+	})
 	ajax.send()
 
 </script>
