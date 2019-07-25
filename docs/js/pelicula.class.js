@@ -26,7 +26,7 @@ class Pelicula {
 
 				//El "this" es la pelicula!
 				console.log(this)
-			if( window.auth2.currentUser.get().isSingnedIn() ){
+			if( window.auth2.currentUser.get().isSignedIn() ){
 					//Chinwevencha!!!!
 				
 				let reproductor = document.querySelector("#playMovie")
