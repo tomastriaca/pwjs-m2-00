@@ -1,6 +1,6 @@
 class Pelicula {
 //1) constructor 
-constructor(ID, T, E, D, P, TR){
+	constructor(ID, T, E, D, P, TR){
 		this.ID = ID
 		this.Titulo = T
 		this.Descripcion = D
@@ -8,7 +8,7 @@ constructor(ID, T, E, D, P, TR){
 		this.Poster = P
 		this.Trailer = TR 
 		
-		}
+	}
 		Mostrar(){
 			
 			//1)capturar el elemento(y clonarlos)
@@ -26,6 +26,8 @@ constructor(ID, T, E, D, P, TR){
 
 				//El "this" es la pelicula!
 				console.log(this)
+			if( window.auth2.current.get().isSingnedIn() ){
+					//Chinwevencha!!!!
 				
 				let reproductor = document.querySelector("#playMovie")
 
@@ -38,6 +40,14 @@ constructor(ID, T, E, D, P, TR){
 					behavior: "smooth",
 					top: reproductor.offsetTop
 				})
+			} else{
+				//logeate.....papafrita!
+				auth2.singIn().then(function(){
+					let usuario = auth2.currentUser.get().getBasicProfile()
+
+					alert(`bienvenido ${usuario.getGivenName()}`)
+				})
+			}
 			}
 
 			//elemento.querySelector("a") onclick = Reproductor.bind(this)

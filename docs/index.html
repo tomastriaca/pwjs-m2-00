@@ -51,8 +51,25 @@
 				</div>
 			</div>
 		</div>
+		<script src="https://apis.google.com/js/api:client.js"></script>
 		<script src="js/pelicula.class.js"></script>
 		<script>
+
+			///////////////////////login con Google//////////////
+
+			 gapi.load('auth2', function(){
+			 	window.auth2 = gapi.auth2.init({
+			 		client_id:"276219257422-fn32biq3b94nvhtcfnfhqs9h2qe2nno0.apps.googleusercontent.com",
+			 		cookiepolicy:"single_host_origin"
+
+
+			 	})
+			 })
+
+
+
+
+			///////////////////////////fin login con google/////////////
 			/*
 			let unaPelicula = new Pelicula("Iron Maiden", 2008,"el hombre de hierro", "https://www.google.com/imgres?imgurl=https%3A%2F%2Fimg.europapress.es%2Ffotoweb%2Ffotonoticia_20180309124100_640.jpg&imgrefurl=https%3A%2F%2Fwww.culturaocio.com%2Fcine%2Fnoticia-asi-bleeding-edge-nueva-armadura-iron-man-infinity-war-20180309124100.html&docid=69a_vR16o-vr-M&tbnid=i-KmpMcQbBeHQM%3A&vet=10ahUKEwjb2LaUv5zjAhVJK7kGHSttCAAQMwh0KCEwIQ..i&w=640&h=373&bih=657&biw=1366&q=Iron%20man&ved=0ahUKEwjb2LaUv5zjAhVJK7kGHSttCAAQMwh0KCEwIQ&iact=mrc&uact=8", "https://www.youtube.com/watch?v=8hYlB38asDY")
 
