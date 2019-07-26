@@ -25,7 +25,7 @@ class Pelicula {
 				e.preventDefault()
 
 				//El "this" es la pelicula!
-				console.log(this)
+				
 			if( window.auth2.currentUser.get().isSignedIn() ){
 					//Chinwevencha!!!!
 				
