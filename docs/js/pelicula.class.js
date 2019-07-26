@@ -42,7 +42,7 @@ class Pelicula {
 				})
 			} else{
 				//logeate.....papafrita!
-				auth2.singIn().then(function(){
+				auth2.signIn().then(function(){
 					let usuario = auth2.currentUser.get().getBasicProfile()
 
 					//alert(`bienvenido ${usuario.getGivenName()}`)//
